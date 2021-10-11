@@ -22,7 +22,7 @@ function App() {
         <Route path="/case" component={CaseScreen}/>
         <Route path="/donation" component={DonationScreen}/>
         <Route path="/region" component={RegionScreen}/>
-        <Route path="/user" component={UserScreen}/>
+        <Route path="/users" component={UserScreen}/>
       </Container>
       <Footer/>
     </Router>
