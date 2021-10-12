@@ -8,7 +8,7 @@ import { MdOutlineAlternateEmail } from "react-icons/md";
 
 const Footer = () => {
   return (
-    <Container className="fixed-bottom">
+    <Container>
       <Dropdown.Divider />
       <Row>
         <Col>
@@ -85,13 +85,13 @@ const Footer = () => {
       </Row>
       <Dropdown.Divider />
       <Row>
-        <div class="credits text-center">
+        <small class="credits text-center">
           Aile ve Sosyal Hizmetler Bakanlığı | Bilgi Teknolojileri
           GenelMüdürlüğü
-        </div>
-        <div class="copyright text-center">
+        </small>
+        <small class="copyright text-center">
           <p>2021 &copy; Tüm Hakları Saklıdır</p>
-        </div>
+        </small>
       </Row>
     </Container>
   );

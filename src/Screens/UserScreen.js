@@ -8,41 +8,48 @@ const UserScreen = () => {
       <Container>
         <SubmitUser />
       </Container>
+      
       <Dropdown.Divider/>
-      <Container>
-        <Table class="table table-hover table-success">
+      
+      <Container className="py-5">
+        <Table className="table table-secondary table-hover" responsive="md">
           <thead>
             <tr>
-              <th scope="col">Type</th>
-              <th scope="col">Column heading</th>
-              <th scope="col">Column heading</th>
-              <th scope="col">Column heading</th>
+              <th scope="col">Sıra No</th>
+              <th scope="col">Personel Adı</th>
+              <th scope="col">Personel Soyadı</th>
+              <th scope="col">E-Posta Adresi</th>
+              <th scope="col">İşlem</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <th scope="row">Active</th>
+              <th scope="row">1</th>
               <td>Column content</td>
               <td>Column content</td>
               <td>Column content</td>
+              <td>Sil Güncelle</td>
             </tr>
             <tr>
-              <th scope="row">Default</th>
+              <th scope="row">2</th>
               <td>Column content</td>
               <td>Column content</td>
               <td>Column content</td>
+              <td>Sil Güncelle</td>
             </tr>
             <tr>
-              <th scope="row">Primary</th>
+              <th scope="row">3</th>
               <td>Column content</td>
               <td>Column content</td>
               <td>Column content</td>
+              <td>Sil Güncelle</td>
             </tr>
             <tr>
-              <th scope="row">Secondary</th>
+              <th scope="row">4</th>
               <td>Column content</td>
               <td>Column content</td>
               <td>Column content</td>
+              <td>Sil Güncelle</td>
             </tr>
           </tbody>
         </Table>

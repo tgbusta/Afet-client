@@ -15,7 +15,7 @@ function App() {
 
     <Router>
       <Navi/>
-      <Container>
+      <Container style={{background:"#c6cbd1"}}>
         <Route path="/" component={HomeScreen} exact/>
         <Route path="/home" component={HomeScreen}/>
         <Route path="/aid" component={AidScreen}/>
