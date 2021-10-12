@@ -23,6 +23,7 @@ const SubmitUser = () => {
   };
 
   return (
+    
     <div className="p-5 bg-gradient-dark text-dark">
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
         <Row className="mb-3">
