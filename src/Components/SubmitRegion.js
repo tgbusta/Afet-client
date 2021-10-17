@@ -1,29 +1,46 @@
 import React, { validated, handleSubmit } from "react";
-import { Form, Button, Row, InputGroup, Col, FormGroup } from "react-bootstrap";
+import {
+  Form,
+  Button,
+  Row,
+  InputGroup,
+  Col,
+  FormGroup,
+  Container,
+  FloatingLabel,
+} from "react-bootstrap";
 
 const SubmitRegion = () => {
   return (
-    <div className="p-5 bg-gradient-dark text-dark">
+    <Container>
+      <h3 className="py-3"> Afet Bölgesi Kaydı Oluştur</h3>
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
-        <Row className="mb-3">
-          <Form.Group as={Col} md="6" controlId="validationCustomName">
-            <Form.Label>Afet Bölgesi Adı</Form.Label>
-            <InputGroup hasValidation>
+        <Row className="my-3">
+          <Form.Group as={Col} md="6" controlId="validationCustomRegionName">
+            <FloatingLabel
+              controlId="floatingInput"
+              label="Afet Bölgesi Adı"
+              className="mb-3"
+            >
               <Form.Control
                 type="text"
-                placeholder="Örneğin Kastamonu Sel Felaketi"
-                aria-describedby="inputGroupPrepend"
+                placeholder="Afet Bölgesi Adı"
                 required
               />
               <Form.Control.Feedback type="invalid">
                 Bu alanın doldurulması zorunludur.
               </Form.Control.Feedback>
-            </InputGroup>
+            </FloatingLabel>
           </Form.Group>
 
-          <Form.Group as={Col} md="6" controlId="validationCustomSurname">
-            <Form.Label>Afet Türü</Form.Label>
-            <Form.Control as="select">
+
+          <Form.Group as={Col} md="6" controlId="validationCustomDisaster">
+            <FloatingLabel
+              controlId="floatingInput"
+              label="Afet Türü"
+              className="mb-3"
+            >
+              <Form.Control as="select">
               <option value="">Sel</option>
               <option value="">Deprem</option>
               <option value="">Yangın</option>
@@ -32,42 +49,72 @@ const SubmitRegion = () => {
               <option value="">Fırtına</option>
               <option value="">Diğer</option>
             </Form.Control>
+              <Form.Control.Feedback type="invalid">
+                Bu alanın doldurulması zorunludur.
+              </Form.Control.Feedback>
+            </FloatingLabel>
           </Form.Group>
+
         </Row>
         <Row className="mb-4">
-          <Form.Group as={Col} md="4" controlId="validationCustomSurname">
-            <Form.Label>Afet İli</Form.Label>
-            <Form.Control as="select">
-              <option value="">Ankara</option>
-              <option value="">İstanbul</option>
-              <option value="">İzmir</option>
+        
+        <Form.Group as={Col} md="4" controlId="validationCustomCity">
+            <FloatingLabel
+              controlId="floatingInput"
+              label="Afet İli"
+              className="mb-3"
+            >
+              <Form.Control as="select" required>
+              <option value="">Rize</option>
+              <option value="">Kastamonu</option>
+              <option value="">Muğla</option>
+              <option value="">Zonguldak</option>
+              <option value="">Van</option>
               
             </Form.Control>
+              <Form.Control.Feedback type="invalid">
+                Bu alanın doldurulması zorunludur.
+              </Form.Control.Feedback>
+            </FloatingLabel>
           </Form.Group>
-          <Form.Group as={Col} md="4" controlId="validationCustomUsername">
-            <Form.Label>Afet İlçesi</Form.Label>
-            <InputGroup hasValidation>
+         
+          <Form.Group as={Col} md="4" controlId="validationCustomDistrict">
+            <FloatingLabel
+              controlId="floatingInput"
+              label="Afet İlçesi"
+              className="mb-3"
+            >
               <Form.Control
                 type="text"
-                placeholder="Afetten etkilenen ilçeyi giriniz."
-                aria-describedby="inputGroupPrepend"
+                placeholder="Afet İlçesi"
                 required
               />
               <Form.Control.Feedback type="invalid">
-                Bu alan boş bırakılamaz.
+                Bu alanın doldurulması zorunludur.
               </Form.Control.Feedback>
-            </InputGroup>
+            </FloatingLabel>
           </Form.Group>
-
-          <Form.Group as={Col} md="4" controlId="validationCustomSurname">
-            <Form.Label>Afet Tarihi</Form.Label>
-
-            <Form.Control
-              type="date"
-              aria-describedby="inputGroupPrepend"
-              required
-            />
-          </Form.Group>
+         
+          <Form.Group
+                as={Col}
+                md="4"
+                controlId="validationCustomDisasterDate"
+              >
+                <FloatingLabel
+                  controlId="floatingInput"
+                  label="Afet Tarihi"
+                  className="mb-3"
+                >
+                  <Form.Control
+                    type="date"
+                    aria-describedby="inputGroupPrepend"
+                    required
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    Bu alanın doldurulması zorunludur.
+                  </Form.Control.Feedback>
+                </FloatingLabel>
+              </Form.Group>
         </Row>
         <Row className="text-center pt-5">
           <FormGroup>
@@ -77,7 +124,7 @@ const SubmitRegion = () => {
           </FormGroup>
         </Row>
       </Form>
-    </div>
+    </Container>
   );
 };
 

@@ -11,6 +11,7 @@ const RegionScreen = () => {
       <Dropdown.Divider />
 
       <Container className="py-5">
+      <h3>Afet Bölgeleri</h3>
         <Table className="table table-secondary table-hover" responsive="md">
           <thead>
             <tr>
@@ -19,7 +20,7 @@ const RegionScreen = () => {
               <th scope="col">İl</th>
               <th scope="col">İlçe</th>
               <th scope="col">Afet Türü</th>
-              <th scope="col">Tarihi</th>
+              <th scope="col">Afet Tarihi</th>
               <th scope="col"></th>
             </tr>
           </thead>

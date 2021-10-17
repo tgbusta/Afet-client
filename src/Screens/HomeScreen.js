@@ -134,7 +134,8 @@ const HomeScreen = () => {
           </Row>
         </Container>
         <Container className="py-5">
-          <Table hover variant="secondary" className="mb-3">
+            <h2 className="py-2">Hesap Numaralarımız</h2>
+         <Table hover variant="secondary" className="mb-3">
             <thead>
               <tr>
                 <th>Banka Adı</th>

@@ -14,7 +14,7 @@ const Navi = () => {
               <div class="p-2 bd-highlight">
                 <Image src={logo} fluid style={{ width: "300px" }} />
                 <br />
-                Afet Yardım Sistemi
+                <h3 className="">Afet Yardım Sistemi</h3>
                 <Navbar.Toggle
                   aria-controls="basic-navbar-nav nav-menu-custom"
                   style={{ position: "absolute", top: "65px", right: "65px" }}

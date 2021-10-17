@@ -12,6 +12,7 @@ const UserScreen = () => {
       <Dropdown.Divider/>
       
       <Container className="py-5">
+      <h3>Kullanıcılar</h3>
         <Table className="table table-secondary table-hover" responsive="md">
           <thead>
             <tr>

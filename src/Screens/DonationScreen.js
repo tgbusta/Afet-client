@@ -12,6 +12,7 @@ const DonationScreen = () => {
       <Dropdown.Divider />
 
       <Container className="py-5">
+      <h3>Yapılan Bağışlar</h3>
         <Table className="table table-secondary table-hover" responsive="md">
           <thead>
             <tr>

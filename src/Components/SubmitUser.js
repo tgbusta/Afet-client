@@ -7,6 +7,7 @@ import {
   InputGroup,
   FormGroup,
   Container,
+  FloatingLabel
 } from "react-bootstrap";
 
 const SubmitUser = () => {
@@ -24,84 +25,79 @@ const SubmitUser = () => {
 
   return (
     
-    <div className="p-5 bg-gradient-dark text-dark">
-      <Form noValidate validated={validated} onSubmit={handleSubmit}>
+    <Container>
+        <h3 className="py-3">Kullanıcı Kaydı Oluştur</h3>
+      <Form noValidate validated={validated} onSubmit={handleSubmit}>       
         <Row className="mb-3">
-          <Form.Group as={Col} md="4" controlId="validationCustomName">
-            <Form.Label>Personel Adı</Form.Label>
-            <InputGroup hasValidation>
-              <Form.Control
-                type="text"
-                placeholder="Personel adını giriniz."
-                aria-describedby="inputGroupPrepend"
-                required
-              />
+
+<Form.Group as={Col} md="4" controlId="validationCustomName">
+            <FloatingLabel
+              controlId="floatingInput"
+              label="Personel Adı"
+              className="mb-3"
+            >
+              <Form.Control type="text" placeholder="Personel Adı" />
               <Form.Control.Feedback type="invalid">
                 Bu alanın doldurulması zorunludur.
               </Form.Control.Feedback>
-            </InputGroup>
+            </FloatingLabel>
           </Form.Group>
 
           <Form.Group as={Col} md="4" controlId="validationCustomSurname">
-            <Form.Label>Personel Soyadı</Form.Label>
-            <InputGroup hasValidation>
-              <Form.Control
-                type="text"
-                placeholder="Personel soyadını giriniz."
-                aria-describedby="inputGroupPrepend"
-                required
-              />
+            <FloatingLabel
+              controlId="floatingInput"
+              label="Personel Soyadı"
+              className="mb-3"
+            >
+              <Form.Control type="text" placeholder="Personel Soyadı" />
               <Form.Control.Feedback type="invalid">
                 Bu alanın doldurulması zorunludur.
               </Form.Control.Feedback>
-            </InputGroup>
+            </FloatingLabel>
+          </Form.Group>
+            
+        
+          <Form.Group as={Col} md="4" controlId="validationCustomEmail">
+            <FloatingLabel
+              controlId="floatingInput"
+              label="E-Posta Adresi"
+              className="mb-3"
+            >
+              <Form.Control type="email" placeholder="E-Posta Adresi" />
+              <Form.Control.Feedback type="invalid">
+              Geçerli bir e-posta adresi giriniz.
+              </Form.Control.Feedback>
+            </FloatingLabel>
           </Form.Group>
 
-          <Form.Group as={Col} md="4" controlId="validationCustomEmail">
-            <Form.Label>E-Posta Adresi</Form.Label>
-            <InputGroup hasValidation>
-              <Form.Control
-                type="email"
-                placeholder="example@aile.gov.tr"
-                aria-describedby="inputGroupPrepend"
-                required
-              />
-              <Form.Control.Feedback type="invalid">
-                Geçerli bir kullanıcı e-posta adresi giriniz.
-              </Form.Control.Feedback>
-            </InputGroup>
-          </Form.Group>
         </Row>
         <Row className="mb-3">
-          <Form.Group as={Col} md="6" controlId="validationCustomUsername">
-            <Form.Label>Kullanıcı Adı</Form.Label>
-            <InputGroup hasValidation>
-              <Form.Control
-                type="text"
-                placeholder="Kullanıcı adı giriniz."
-                aria-describedby="inputGroupPrepend"
-                required
-              />
-              <Form.Control.Feedback type="invalid">
-                Bir şifre belirleyiniz.
-              </Form.Control.Feedback>
-            </InputGroup>
-          </Form.Group>
 
-          <Form.Group as={Col} md="6" controlId="validationCustomPassword">
-            <Form.Label>Şifre</Form.Label>
-            <InputGroup hasValidation>
-              <Form.Control
-                type="password"
-                placeholder="*******"
-                aria-describedby="inputGroupPrepend"
-                required
-              />
+        <Form.Group as={Col} md="6" controlId="validationCustomUsername">
+            <FloatingLabel
+              controlId="floatingInput"
+              label="Kullanıcı Adı"
+              className="mb-3"
+            >
+              <Form.Control type="text" placeholder="Kullanıcı Adı" />
               <Form.Control.Feedback type="invalid">
-                Geçerli bir kullanıcı adı giriniz.
+                Bu alanın doldurulması zorunludur.
               </Form.Control.Feedback>
-            </InputGroup>
+            </FloatingLabel>
           </Form.Group>
+          <Form.Group as={Col} md="6" controlId="validationCustomPassword">
+            <FloatingLabel
+              controlId="floatingInput"
+              label="Şifre"
+              className="mb-3"
+            >
+              <Form.Control type="password" placeholder="******" />
+              <Form.Control.Feedback type="invalid">
+                Bu alanın doldurulması zorunludur.
+              </Form.Control.Feedback>
+            </FloatingLabel>
+          </Form.Group>
+        
         </Row>
         <Row className="text-center pt-5">
           <FormGroup>
@@ -111,7 +107,7 @@ const SubmitUser = () => {
           </FormGroup>
         </Row>
       </Form>
-    </div>
+    </Container>
   );
 };
 

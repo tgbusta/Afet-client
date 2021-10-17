@@ -9,17 +9,15 @@ import {
   Tabs,
   Tab,
   FloatingLabel,
+  Container,
 } from "react-bootstrap";
 
 const SubmitDonation = () => {
   return (
-    <div className="p-5 bg-gradient-dark text-dark">
-      <Tabs
-        defaultActiveKey="profile"
-        id="uncontrolled-tab-example"
-        className="mb-3"
-      >
-        <Tab eventKey="home" title="Gerçek Kişi">
+    <Container>
+      <h3 className="py-3">Bağış Kaydı Oluştur</h3>
+      <Tabs defaultActiveKey="real" id="aid-tabs" className="my-3">
+        <Tab eventKey="real" title="Gerçek Kişi">
           <Form noValidate validated={validated} onSubmit={handleSubmit}>
             <Row className="mb-3">
               <Form.Group as={Col} md="4" controlId="validationCustomDonorName">
@@ -28,7 +26,7 @@ const SubmitDonation = () => {
                   label="Bağışçının Adı"
                   className="mb-3"
                 >
-                  <Form.Control type="text" placeholder="Bağışçının Adı" />
+                  <Form.Control type="text" placeholder="Bağışçının Adı" required/>
                   <Form.Control.Feedback type="invalid">
                     Bu alanın doldurulması zorunludur.
                   </Form.Control.Feedback>
@@ -45,7 +43,7 @@ const SubmitDonation = () => {
                   label="Bağışçının Soyadı"
                   className="mb-3"
                 >
-                  <Form.Control type="text" placeholder="Bağışçının Soyadı" />
+                  <Form.Control type="text" placeholder="Bağışçının Soyadı" required/>
                   <Form.Control.Feedback type="invalid">
                     Bu alanın doldurulması zorunludur.
                   </Form.Control.Feedback>
@@ -55,14 +53,46 @@ const SubmitDonation = () => {
               <Form.Group
                 as={Col}
                 md="4"
-                controlId="validationCustomIdentityNumber"
+                controlId="validationCustomDonorIdNumber"
               >
                 <FloatingLabel
                   controlId="floatingInput"
                   label="TC Kimlik Numarası"
                   className="mb-3"
                 >
-                  <Form.Control type="text" placeholder="TC Kimlik Numarası" />
+                  <Form.Control type="text" placeholder="TC Kimlik Numarası" required/>
+                  <Form.Control.Feedback type="invalid">
+                    Bu alanın doldurulması zorunludur.
+                  </Form.Control.Feedback>
+                </FloatingLabel>
+              </Form.Group>
+            </Row>
+
+            <Row className="mb-4">
+              <Form.Group as={Col} md="4" controlId="validationCustomDonorTel">
+                <FloatingLabel
+                  controlId="floatingInput"
+                  label="Telefon Numarası"
+                  className="mb-3"
+                >
+                  <Form.Control type="tel" placeholder="Telefon Numarası" required/>
+                  <Form.Control.Feedback type="invalid">
+                    Bu alanın doldurulması zorunludur.
+                  </Form.Control.Feedback>
+                </FloatingLabel>
+              </Form.Group>
+
+              <Form.Group
+                as={Col}
+                md="8"
+                controlId="validationCustomDonorAdress"
+              >
+                <FloatingLabel
+                  controlId="floatingInput"
+                  label="Adres"
+                  className="mb-3"
+                >
+                  <Form.Control type="text" placeholder="Adres" required/>
                   <Form.Control.Feedback type="invalid">
                     Bu alanın doldurulması zorunludur.
                   </Form.Control.Feedback>
@@ -77,7 +107,7 @@ const SubmitDonation = () => {
                   label="Bağış Bölgesi"
                   className="mb-3"
                 >
-                  <Form.Control type="text" placeholder="Bağış Bölgesi" />
+                  <Form.Control type="text" placeholder="Bağış Bölgesi" required/>
                   <Form.Control.Feedback type="invalid">
                     Bu alanın doldurulması zorunludur.
                   </Form.Control.Feedback>
@@ -94,13 +124,12 @@ const SubmitDonation = () => {
                   label="Bağış Tutarı"
                   className="mb-3"
                 >
-                  <Form.Control type="text" placeholder="Bağış Tutarı" />
+                  <Form.Control type="text" placeholder="Bağış Tutarı" required/>
                   <Form.Control.Feedback type="invalid">
                     Bu alanın doldurulması zorunludur.
                   </Form.Control.Feedback>
                 </FloatingLabel>
               </Form.Group>
-
 
               <Form.Group
                 as={Col}
@@ -134,16 +163,48 @@ const SubmitDonation = () => {
           </Form>
         </Tab>
 
-        <Tab eventKey="profile" title="Tüzel Kişi">
-        <Form noValidate validated={validated} onSubmit={handleSubmit}>
+        <Tab eventKey="legal" title="Tüzel Kişi">
+          <Form noValidate validated={validated} onSubmit={handleSubmit}>
             <Row className="mb-3">
-              <Form.Group as={Col} md="6" controlId="validationCustomDonorTitle">
+              <Form.Group
+                as={Col}
+                md="6"
+                controlId="validationCustomDonorTitle"
+              >
                 <FloatingLabel
                   controlId="floatingInput"
                   label="Bağışçının Unvanı"
                   className="mb-3"
                 >
-                  <Form.Control type="text" placeholder="Bağışçının Unvanı" />
+                  <Form.Control type="text" placeholder="Bağışçının Unvanı" required/>
+                  <Form.Control.Feedback type="invalid">
+                    Bu alanın doldurulması zorunludur.
+                  </Form.Control.Feedback>
+                </FloatingLabel>
+              </Form.Group>
+
+              <Form.Group as={Col} md="6" controlId="validationCustomTaxNumber">
+                <FloatingLabel
+                  controlId="floatingInput"
+                  label="Vergi Numarası"
+                  className="mb-3"
+                >
+                  <Form.Control type="text" placeholder="Vergi Numarası" required/>
+                  <Form.Control.Feedback type="invalid">
+                    Bu alanın doldurulması zorunludur.
+                  </Form.Control.Feedback>
+                </FloatingLabel>
+              </Form.Group>
+            </Row>
+
+            <Row className="mb-4">
+              <Form.Group as={Col} md="4" controlId="validationCustomDonorTel">
+                <FloatingLabel
+                  controlId="floatingInput"
+                  label="Telefon Numarası"
+                  className="mb-3"
+                >
+                  <Form.Control type="tel" placeholder="Telefon Numarası" required/>
                   <Form.Control.Feedback type="invalid">
                     Bu alanın doldurulması zorunludur.
                   </Form.Control.Feedback>
@@ -152,15 +213,15 @@ const SubmitDonation = () => {
 
               <Form.Group
                 as={Col}
-                md="6"
-                controlId="validationCustomTaxNumber"
+                md="8"
+                controlId="validationCustomDonorAdress"
               >
                 <FloatingLabel
                   controlId="floatingInput"
-                  label="Vergi Numarası"
+                  label="Adres"
                   className="mb-3"
                 >
-                  <Form.Control type="text" placeholder="Vergi Numarası" />
+                  <Form.Control type="text" placeholder="Adres" required/>
                   <Form.Control.Feedback type="invalid">
                     Bu alanın doldurulması zorunludur.
                   </Form.Control.Feedback>
@@ -175,7 +236,7 @@ const SubmitDonation = () => {
                   label="Bağış Bölgesi"
                   className="mb-3"
                 >
-                  <Form.Control type="text" placeholder="Bağış Bölgesi" />
+                  <Form.Control type="text" placeholder="Bağış Bölgesi" required/>
                   <Form.Control.Feedback type="invalid">
                     Bu alanın doldurulması zorunludur.
                   </Form.Control.Feedback>
@@ -192,13 +253,12 @@ const SubmitDonation = () => {
                   label="Bağış Tutarı"
                   className="mb-3"
                 >
-                  <Form.Control type="text" placeholder="Bağış Tutarı" />
+                  <Form.Control type="text" placeholder="Bağış Tutarı" required/>
                   <Form.Control.Feedback type="invalid">
                     Bu alanın doldurulması zorunludur.
                   </Form.Control.Feedback>
                 </FloatingLabel>
               </Form.Group>
-
 
               <Form.Group
                 as={Col}
@@ -232,7 +292,7 @@ const SubmitDonation = () => {
           </Form>
         </Tab>
       </Tabs>
-    </div>
+    </Container>
   );
 };
 

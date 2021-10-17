@@ -1,4 +1,4 @@
-import React from "react";
+import React, { validated, handleSubmit } from "react";
 import {
   Form,
   Button,
@@ -12,47 +12,133 @@ import {
 const SubmitAid = () => {
   return (
     <Container>
-      <Form>
-      <Form.Group as={Row} className="mb-3" controlId="FirstName">
-          <Form.Label column sm={2}>
-            Adı
-          </Form.Label>
-          <Col sm={10}>
-            <Form.Control placeholder="Adını giriniz." />
-          </Col>
-        </Form.Group>
+      <h3 className="py-3">Yardım Kaydı Oluştur</h3>
+      <Form noValidate validated={validated} onSubmit={handleSubmit}>
+        <Row className="my-3">
+          
+          <Form.Group as={Col} md="4" controlId="validationCustomAidName">
+            <FloatingLabel
+              controlId="floatingInput"
+              label="Afetzedenin Adı"
+              className="mb-3"
+            >
+              <Form.Control type="text" placeholder="Afetzedenin Adı" />
+              <Form.Control.Feedback type="invalid">
+                Bu alanın doldurulması zorunludur.
+              </Form.Control.Feedback>
+            </FloatingLabel>
+          </Form.Group>
 
-        <Form.Group as={Row} className="mb-3" controlId="FirstName">
-          <Form.Label column sm={2}>
-            Soyadı
-          </Form.Label>
-          <Col sm={10}>
-            <Form.Control placeholder="Soyadını giriniz." />
-          </Col>
-        </Form.Group>
+          <Form.Group as={Col} md="4" controlId="validationCustomAidSurname">
+            <FloatingLabel
+              controlId="floatingInput"
+              label="Afetzedenin Soyadı"
+              className="mb-3"
+            >
+              <Form.Control type="text" placeholder="Afetzedenin Soyadı" />
+              <Form.Control.Feedback type="invalid">
+                Bu alanın doldurulması zorunludur.
+              </Form.Control.Feedback>
+            </FloatingLabel>
+          </Form.Group>
 
-        <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
-          <Form.Label column sm={2}>
-            Email
-          </Form.Label>
-          <Col sm={10}>
-            <Form.Control type="email" placeholder="Email" />
-          </Col>
-        </Form.Group>
+          <Form.Group
+            as={Col}
+            md="4"
+            controlId="validationCustomAidIdentityNumber"
+          >
+            <FloatingLabel
+              controlId="floatingInput"
+              label="TC Kimlik Numarası"
+              className="mb-3"
+            >
+              <Form.Control type="text" placeholder="TC Kimlik Numarası" />
+              <Form.Control.Feedback type="invalid">
+                Bu alanın doldurulması zorunludur.
+              </Form.Control.Feedback>
+            </FloatingLabel>
+          </Form.Group>
+        </Row>
+        <Row className="mb-4">
+          <Form.Group as={Col} md="4" controlId="validationCustomAidTel">
+            <FloatingLabel
+              controlId="floatingInput"
+              label="Telefon Numarası"
+              className="mb-3"
+            >
+              <Form.Control type="text" placeholder="Telefon Numarası" />
+              <Form.Control.Feedback type="invalid">
+                Bu alanın doldurulması zorunludur.
+              </Form.Control.Feedback>
+            </FloatingLabel>
+          </Form.Group>
 
-        <Form.Group
-          as={Row}
-          className="mb-3"
-          controlId="formHorizontalPassword"
-        >
-          <Form.Label column sm={2}>
-            Password
-          </Form.Label>
-          <Col sm={10}>
-            <Form.Control type="password" placeholder="Password" />
-          </Col>
-        </Form.Group>
-        
+          <Form.Group as={Col} md="8" controlId="validationCustomAidAdress">
+            <FloatingLabel
+              controlId="floatingInput"
+              label="Adres"
+              className="mb-3"
+            >
+              <Form.Control type="text" placeholder="Adres" />
+              <Form.Control.Feedback type="invalid">
+                Bu alanın doldurulması zorunludur.
+              </Form.Control.Feedback>
+            </FloatingLabel>
+          </Form.Group>
+        </Row>
+
+        <Row className="mb-4">
+          <Form.Group as={Col} md="4" controlId="validationCustomRegion">
+            <FloatingLabel
+              controlId="floatingInput"
+              label="Afet Bölgesi"
+              className="mb-3"
+            >
+              <Form.Control type="text" placeholder="Afet Bölgesi" />
+              <Form.Control.Feedback type="invalid">
+                Bu alanın doldurulması zorunludur.
+              </Form.Control.Feedback>
+            </FloatingLabel>
+          </Form.Group>
+
+          <Form.Group as={Col} md="4" controlId="validationCustomAidAmount">
+            <FloatingLabel
+              controlId="floatingInput"
+              label="Yardım Tutarı"
+              className="mb-3"
+            >
+              <Form.Control type="text" placeholder="Yardım Tutarı" />
+              <Form.Control.Feedback type="invalid">
+                Bu alanın doldurulması zorunludur.
+              </Form.Control.Feedback>
+            </FloatingLabel>
+          </Form.Group>
+
+          <Form.Group as={Col} md="4" controlId="validationCustomAidDate">
+            <FloatingLabel
+              controlId="floatingInput"
+              label="Yardım Tarihi"
+              className="mb-3"
+            >
+              <Form.Control
+                type="date"
+                aria-describedby="inputGroupPrepend"
+                required
+              />
+              <Form.Control.Feedback type="invalid">
+                Bu alanın doldurulması zorunludur.
+              </Form.Control.Feedback>
+            </FloatingLabel>
+          </Form.Group>
+        </Row>
+
+        <Row className="text-center pt-5">
+          <FormGroup>
+            <Button type="submit" className="bg-success">
+              Kaydet
+            </Button>
+          </FormGroup>
+        </Row>
       </Form>
     </Container>
   );
