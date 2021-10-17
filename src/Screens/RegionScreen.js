@@ -20,11 +20,13 @@ const RegionScreen = () => {
               <th scope="col">İlçe</th>
               <th scope="col">Afet Türü</th>
               <th scope="col">Tarihi</th>
+              <th scope="col"></th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <th scope="row">1</th>
+              <td>Column content</td>
               <td>Column content</td>
               <td>Column content</td>
               <td>Column content</td>
@@ -37,10 +39,12 @@ const RegionScreen = () => {
               <td>Column content</td>
               <td>Column content</td>
               <td>Column content</td>
+              <td>Column content</td>
               <td>Sil Güncelle</td>
             </tr>
             <tr>
               <th scope="row">3</th>
+              <td>Column content</td>
               <td>Column content</td>
               <td>Column content</td>
               <td>Column content</td>
@@ -52,8 +56,7 @@ const RegionScreen = () => {
               <td>Column content</td>
               <td>Column content</td>
               <td>Column content</td>
-
-              
+              <td>Column content</td>
               <td>Column content</td>
               <td>Sil Güncelle</td>
             </tr>
