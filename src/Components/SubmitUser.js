@@ -59,6 +59,7 @@ const SubmitUser = () => {
         
           <Form.Group as={Col} md="4" controlId="validationCustomEmail">
             <FloatingLabel
+              name = "eposta"
               controlId="floatingInput"
               label="E-Posta Adresi"
               className="mb-3"

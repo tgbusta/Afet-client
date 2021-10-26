@@ -8,9 +8,8 @@ const initialState = {
 export default function userReducer (state= initialState, {type,payload}) {
     switch (type){
         case ADD_USER:
-            
-
-
+           
+                
             break;
     
         default:
